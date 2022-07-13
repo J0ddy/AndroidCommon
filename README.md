@@ -3,9 +3,7 @@ A Common library to make your workflow more efficient
 
 ### Dependencies
  - https://github.com/google/gson
-
-
-# Dependencies
+ 
 Gradle:
 ```
 dependencies {
