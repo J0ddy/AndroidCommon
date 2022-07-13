@@ -5,14 +5,14 @@ A Common library to make your workflow more efficient
  - https://github.com/google/gson
  
 Gradle:
-```
+```json
 dependencies {
   implementation 'com.google.code.gson:gson:2.9.0'
 }
 ```
 
 Maven:
-```
+```xml
 <dependency>
   <groupId>com.google.code.gson</groupId>
   <artifactId>gson</artifactId>
