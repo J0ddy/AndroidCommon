@@ -21,7 +21,7 @@ Maven:
 ```
 _More information: [github.com/google/gson](https://github.com/google/gson)_
 
-# How to use
+### How to use
  - Add `Common.java` to your main package
  - Update your dependencies according to the [Dependencies](https://github.com/J0ddy/AndroidCommon#Dependencies)
  - Update the `PACKAGE` string to your project's package
