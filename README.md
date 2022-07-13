@@ -5,7 +5,7 @@ A Common library to make your workflow more efficient
  - https://github.com/google/gson
  
 Gradle:
-```json
+```gradle
 dependencies {
   implementation 'com.google.code.gson:gson:2.9.0'
 }
