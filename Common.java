@@ -98,6 +98,51 @@ public class Common {
         return gson.fromJson(json,obj.getClass());
     }
 
+    // ===========================================
+    // Preferences
+    // ===========================================
+    public static String getPreferenceString(Activity activity, String key) {
+        SharedPreferences prefs = activity.getSharedPreferences(
+                PACKAGE, Context.MODE_PRIVATE);
+        key = PACKAGE+"."+key;
+        return prefs.getString(key, null);
+    }
+
+    public static Set<String> getPreferenceStringSet(Activity activity, String key) {
+        SharedPreferences prefs = activity.getSharedPreferences(
+                PACKAGE, Context.MODE_PRIVATE);
+        key = PACKAGE+"."+key;
+        return prefs.getStringSet(key, null);
+    }
+
+    public static int getPreferenceInt(Activity activity, String key) {
+        SharedPreferences prefs = activity.getSharedPreferences(
+                PACKAGE, Context.MODE_PRIVATE);
+        key = PACKAGE+"."+key;
+        return prefs.getInt(key,0);
+    }
+
+    public static float getPreferenceFloat(Activity activity, String key) {
+        SharedPreferences prefs = activity.getSharedPreferences(
+                PACKAGE, Context.MODE_PRIVATE);
+        key = PACKAGE+"."+key;
+        return prefs.getFloat(key,0);
+    }
+
+    public static long getPreferenceLong(Activity activity, String key) {
+        SharedPreferences prefs = activity.getSharedPreferences(
+                PACKAGE, Context.MODE_PRIVATE);
+        key = PACKAGE+"."+key;
+        return prefs.getLong(key,0);
+    }
+
+    public static boolean getPreferenceBoolean(Activity activity, String key) {
+        SharedPreferences prefs = activity.getSharedPreferences(
+                PACKAGE, Context.MODE_PRIVATE);
+        key = PACKAGE+"."+key;
+        return prefs.getBoolean(key,false);
+    }
+
     public static void EditPreferenceString(Activity activity, String key, String string) {
         SharedPreferences prefs = activity.getSharedPreferences(
                 PACKAGE, Context.MODE_PRIVATE);
@@ -140,45 +185,10 @@ public class Common {
         prefs.edit().putBoolean(key, bool).apply();
     }
 
-    public static String getPreferenceString(Activity activity, String key) {
+    public static void RemovePreference(Activity activity, String key) {
         SharedPreferences prefs = activity.getSharedPreferences(
                 PACKAGE, Context.MODE_PRIVATE);
         key = PACKAGE+"."+key;
-        return prefs.getString(key, null);
-    }
-
-    public static Set<String> getPreferenceStringSet(Activity activity, String key) {
-        SharedPreferences prefs = activity.getSharedPreferences(
-                PACKAGE, Context.MODE_PRIVATE);
-        key = PACKAGE+"."+key;
-        return prefs.getStringSet(key, null);
-    }
-
-    public static int getPreferenceInt(Activity activity, String key) {
-        SharedPreferences prefs = activity.getSharedPreferences(
-                PACKAGE, Context.MODE_PRIVATE);
-        key = PACKAGE+"."+key;
-        return prefs.getInt(key,0);
-    }
-
-    public static float getPreferenceFloat(Activity activity, String key) {
-        SharedPreferences prefs = activity.getSharedPreferences(
-                PACKAGE, Context.MODE_PRIVATE);
-        key = PACKAGE+"."+key;
-        return prefs.getFloat(key,0);
-    }
-
-    public static long getPreferenceLong(Activity activity, String key) {
-        SharedPreferences prefs = activity.getSharedPreferences(
-                PACKAGE, Context.MODE_PRIVATE);
-        key = PACKAGE+"."+key;
-        return prefs.getLong(key,0);
-    }
-
-    public static boolean getPreferenceBoolean(Activity activity, String key) {
-        SharedPreferences prefs = activity.getSharedPreferences(
-                PACKAGE, Context.MODE_PRIVATE);
-        key = PACKAGE+"."+key;
-        return prefs.getBoolean(key,false);
+        prefs.edit().remove(key).apply();
     }
 }
