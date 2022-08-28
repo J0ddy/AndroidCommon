@@ -21,8 +21,6 @@ import com.google.gson.Gson;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-//import dev.joddy.androidbrowser.model.SearchEngine;
-
 public class Common {
     private static final String PACKAGE = "dev.joddy.common";
   
@@ -46,10 +44,15 @@ public class Common {
         }
     }
 
-    public static void BrowserOpenUrlOrSearch(WebView webView, SearchEngine searchEngine, String str) {
-        if (!BrowserOpenUrl(webView,str))
-            webView.loadUrl(searchEngine.getQueryUrl()+str);
-    }
+    // Requires a SearchEngine Class
+    //public static void BrowserOpenUrlOrSearch(WebView webView, SearchEngine searchEngine, String str) {
+    //    if (!BrowserOpenUrl(webView,str))
+    //        webView.loadUrl(searchEngine.getQueryUrl()+str);
+    //}
+    //
+    //public static void BrowserGoHome(WebView webView, SearchEngine searchEngine) {
+    //    BrowserOpenUrl(webView,searchEngine.getHome());
+    //}
 
     public static boolean BrowserOpenUrl(WebView webView, String str) {
         if (Common.isUrlValid(str)) {
@@ -61,10 +64,6 @@ public class Common {
             return true;
         }
         return false;
-    }
-
-    public static void BrowserGoHome(WebView webView, SearchEngine searchEngine) {
-        BrowserOpenUrl(webView,searchEngine.getHome());
     }
 
 
